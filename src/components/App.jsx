@@ -1,8 +1,8 @@
-const { ipcRenderer } = window;
 import { Fragment, useState } from "react";
 import ActionsBar from "./ActionsBar";
 import Content from "./Content";
 import TopBar from "./TopBar";
+const { ipcRenderer } = window;
 
 export default function App()
 {
@@ -11,9 +11,9 @@ export default function App()
 
     return(
         <Fragment>
-            <TopBar emitter={ipcRenderer} file={file}/>
-            <ActionsBar emitter={ipcRenderer} file={file}/>
-            <Content emitter={ipcRenderer} file={file}/>
+            <TopBar emitter={ipcRenderer} file={file} />
+            <ActionsBar emitter={ipcRenderer} settings={settings} file={file} setFile={setFile} />
+            <Content emitter={ipcRenderer} settings={settings} file={file} setFile={setFile} />
         </Fragment>
     );
 }

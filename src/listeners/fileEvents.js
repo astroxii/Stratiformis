@@ -5,7 +5,7 @@ const fs = require("fs");
 function fileEvents()
 {
     let currentFile = null;
-    const dir = path.join(require('os').homedir(), "Documents", "astral");
+    const dir = path.join(require('os').homedir(), "Documents", "Stratiformis");
     
     ipcMain.handle("file:create", () =>
     {

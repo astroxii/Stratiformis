@@ -1,7 +1,7 @@
-export default function Editor({emitter, file})
+export default function Editor({emitter, file, setFile})
 {
     return(
-        <section>
+        <section className="editor-section" data-testid="editor-section">
             <textarea>
 
             </textarea>
