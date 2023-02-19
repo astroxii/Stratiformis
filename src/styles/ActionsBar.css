@@ -1,0 +1,52 @@
+.actions-menu
+{
+    position: relative; display: inline-flex;
+    top: 0; left: 0;
+    width: 100%; height: 30px;
+    justify-content: start; align-items: center;
+    background-color: rgb(51, 51, 51);
+}
+.actions-menu button
+{
+    height: 30px;
+    padding: 0 20px;
+    font-size: 15px; font-weight: lighter;
+    color: rgb(196, 196, 196);
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+}
+.actions-menu button:disabled
+{
+    color: gray;
+}
+.actions-menu button:not(:disabled):hover
+{
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown
+{
+    position: relative;
+}
+
+.dropdown-list
+{
+    position: absolute;
+    display: none; flex-direction: column;
+    min-width: 100%; width: auto;
+    align-items: center; justify-content: center;
+    background-color: rgb(51, 51, 51);
+}
+.dropdown-list li, .dropdown-list li button
+{
+    min-width: 100%;
+}
+.dropdown-list li button:hover
+{
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown:hover .dropdown-list
+{
+    display: flex;
+}

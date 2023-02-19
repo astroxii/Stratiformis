@@ -1,0 +1,90 @@
+.top-bar
+{
+    position: relative; display: flex; flex-direction: row;
+    top: 0; left: 0;
+    height: 30px; width: 100%;
+    align-items: center; justify-content: center;
+    background-color: rgb(65, 65, 65);
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-app-region: drag;
+}
+.top-bar .title-holder
+{
+    height: 100%;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    margin-left: 7.5px; margin-right: auto;
+    gap: 5px;
+}
+.top-bar .title-holder img
+{
+    height: auto; width: 16px;
+}
+.top-bar .title
+{
+    font-family: "Comfortaa"; font-size: 14px; font-weight: normal;
+    color: rgb(97, 167, 233);
+    -webkit-app-region: drag;
+}
+.top-bar .buttons
+{
+    display: inline-flex;
+    gap: 0;
+    margin-left: auto; margin-right: 0;
+}
+.top-bar .buttons button
+{
+    display: flex;
+    height: 30px; width: 50px;
+    align-items: center; justify-content: center;
+    font-size: 15px; font-weight: lighter;
+    cursor: default;
+    transition: 0.2s ease-in-out;
+}
+.top-bar .buttons button:hover
+{
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.line
+{
+    width: 11px; height: 1px;
+    background-color: white;
+}
+.square
+{
+    width: 11px; height: 11px;
+    border: 1px solid rgb(216, 216, 216);
+}
+.x
+{
+    width: 15px; height: 15px;
+}
+.x::before
+{
+    content: '';
+    position: absolute;
+    width: 1px; height: 15px;
+    transform: rotate(45deg);
+    background-color: rgb(216, 216, 216);
+}
+.x::after
+{
+    content: '';
+    position: absolute;
+    width: 1px; height: 15px;
+    transform: rotate(-45deg);
+    background-color: rgb(216, 216, 216);
+}
+#close-btn:hover
+{
+    background-color: rgb(180, 0, 0);
+}
+
+.top-bar .filename
+{
+    color: rgb(216, 216, 216);
+    margin: auto;
+    font-size: 15px;
+    -webkit-app-region: drag;
+}
