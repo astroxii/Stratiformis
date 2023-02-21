@@ -1,6 +1,7 @@
 # Stratiformis
 
 [![version](https://img.shields.io/github/package-json/v/astroxii/Stratiformis.svg)](#)
+[![status](https://img.shields.io/badge/status-partially%20working-blue.svg)](#)
 [![license](https://img.shields.io/github/license/astroxii/Stratiformis)](https://github.com/astroxii/Stratiformis/blob/main/LICENSE)
 
 Simple text/code editor for any purpose.
