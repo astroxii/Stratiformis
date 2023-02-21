@@ -8,8 +8,7 @@ Simple text/code editor for any purpose.
 
 ## Features
 
-* Open or create a .txt file at user's Documents folder. _(Probably not on Linux)_
-* Edit and save the content.
+* Basic text file open and edit.
 
 ## To be added
 
