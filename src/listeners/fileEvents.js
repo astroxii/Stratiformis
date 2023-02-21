@@ -1,6 +1,7 @@
 const {ipcMain, dialog} = require("electron");
 const path = require("path");
 const fs = require("fs");
+const { File } = require("../objects/File");
 
 function fileEvents()
 {
@@ -35,15 +36,7 @@ function fileEvents()
 
         if(filePath)
         {
-            const file = 
-            {
-                filename: path.basename(filePath[0]),
-                content: fs.readFileSync(filePath[0]).toString().replace(/\r/gi, "")
-            }
-
-            currentFile = filePath[0];
-            
-            return file;
+            return new File(path.basename(filePath[0]), fs.readFileSync(filePath[0]).toString().replace(/\r/gi, ""), filePath[0]);
         }
         else
         {
@@ -51,12 +44,11 @@ function fileEvents()
         }
     });
 
-    ipcMain.handle("file:save", (e, {content}) =>
+    ipcMain.handle("file:save", (e, file) =>
     {
-        fs.writeFileSync(currentFile, content);
-        const filename = path.basename(currentFile);
+        fs.writeFileSync(file.path, file.editedContent);
 
-        return {filename, content};
+        return new File(path.basename(file.path), file.editedContent, file.path);
     });
 
     ipcMain.on("file:close", () =>

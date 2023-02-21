@@ -6,8 +6,13 @@ export default function ActionsBar({emitter, settings, setSettings, file, setFil
     {
         if(!file.saved)
         {
-            emitter.invoke("file:save", {editedContent: file.editedContent}); // TODO
-            setFile({...file, saved: true});
+            // React setState doesn't update instantly, causing file.editedContent to not be the same as editor.value
+            
+
+            emitter.invoke("file:save", {...file, editedContent: document.getElementById("editor").value}).then((f) =>
+            {
+                setFile(f);
+            });
         }
     }
 

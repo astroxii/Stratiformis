@@ -16,7 +16,7 @@ export default function Editor({emitter, file, setFile})
 
     return(
         <section className="section editor-section" data-testid="editor-section">
-            <textarea onInput={(e) => {setFile({...file, editedContent: e.target.value}); checkChanges(e.target.value);}} defaultValue={file.content} className="editor" data-testid="editor"
+            <textarea id="editor" onInput={(e) => {checkChanges(e.target.value);}} defaultValue={file.content} className="editor" data-testid="editor"
             autoFocus={true} autoCorrect="false" autoCapitalize="false" autoComplete="false" spellCheck={false}></textarea>
             <div className="editor-information">
                 <p>Palavras: {`${file.content.split("\n").join(" ").split(" ").length}`}</p>
