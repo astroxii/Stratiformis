@@ -7,7 +7,7 @@ export function getDayPeriodGreetings(lang)
     {
         dp = lang === "en" ? "Good morning" : lang === "pt-br" ?  "Bom dia" : null;
     }
-    else if(hour >= 12 && hour <= 18)
+    else if(hour >= 12 && hour <= 17)
     {
         dp = lang === "en" ? "Good afternoon" : lang === "pt-br" ?  "Boa tarde" : null;
     }

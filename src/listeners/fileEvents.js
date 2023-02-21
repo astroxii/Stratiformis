@@ -31,19 +31,23 @@ function fileEvents()
 
     ipcMain.handle("file:open", () =>
     {
-        const filePath = dialog.showOpenDialogSync({properties: ['openFile'], filters: [{name: "Text", extensions: ["txt"]}]});
+        const filePath = dialog.showOpenDialogSync({properties: ["openFile"], filters: [{name: "Text", extensions: ["txt"]}]});
 
         if(filePath)
         {
-            const content = fs.readFileSync(filePath[0]).toString();
-            const filename = path.basename(filePath[0]);
-            currentFile = filePath[0];
+            const file = 
+            {
+                filename: path.basename(filePath[0]),
+                content: fs.readFileSync(filePath[0]).toString()
+            }
 
-            return {filename, content};
+            currentFile = filePath[0];
+            
+            return file;
         }
         else
         {
-            return {};
+            return null;
         }
     });
 

@@ -14,9 +14,9 @@ describe("Rendered Main Content", () =>
 
     test("Editor component present if a file is open", () =>
     {
-        render(<Content file={{filename: "abc", saved: true, path: "..."}} />);
+        render(<Content file={{filename: "abc", saved: true, content: "aaa"}} />);
 
-        const editor = screen.getByTestId("editor-section");
-        expect(editor).toBeInTheDocument();
+        const editorView = screen.getByTestId("editor-section");
+        expect(editorView).toBeInTheDocument();
     });
 });

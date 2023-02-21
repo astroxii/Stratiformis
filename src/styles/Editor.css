@@ -1,57 +1,21 @@
+.editor-section
+{
+}
 .editor
 {
-    display: none;
     height: 100%; width: 100%;
+    margin: 0 auto;
     padding: 10px 5px 0 5px;
     color: rgb(216, 216, 216);
-    background-color: black;
     font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: normal;
+    background-color: brown;
     resize: none;
+    overflow: scroll;
 }
-
-.confirm-exit-container
+.editor-information
 {
-    height: 100%; width: 100%;
-    position: absolute;
-    display: none; flex-direction: column;
-    align-items: center; justify-content: center;
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(2px);
-    z-index: 1;
-}
-.confirm-exit-box
-{
-    height: 125px; width: 300px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 25px;
-    border-radius: 10px;
-    background-color: rgb(61, 61, 61);
-    z-index: 1;
-    user-select: none;
-}
-.confirm-exit-box h1
-{
-    margin-top: 10px; margin-bottom: auto;
-    font-size: 18px; font-weight: lighter;
-    color: white;
-}
-.confirm-exit-box div
-{
-    display: inline-flex; 
-    align-items: center; justify-content: center;
-    gap: 25px;
-    margin: auto;
-}
-.confirm-exit-box div button
-{
-    padding: 5px 10px;
-    color: white;
-    border-radius: 10px;
-    background-color: rgb(87, 87, 87);
-    cursor: pointer;
-}
-.confirm-exit-box div button:first-of-type
-{
-    background-color: cornflowerblue;
+    width: 100%; height: 20px;
+    margin: auto 0;
+    background-color: rgb(51, 51, 51);
+    background-color: antiquewhite;
 }

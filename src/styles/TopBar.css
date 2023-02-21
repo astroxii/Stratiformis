@@ -25,8 +25,8 @@
 }
 .top-bar .title
 {
-    font-family: "Comfortaa"; font-size: 14px; font-weight: normal;
-    color: rgb(97, 167, 233);
+    font-family: "Comfortaa"; font-size: 14px; font-weight: lighter;
+    color: white;
     -webkit-app-region: drag;
 }
 .top-bar .buttons
@@ -85,8 +85,18 @@
 
 .top-bar .filename
 {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    gap: 5px;
     color: rgb(216, 216, 216);
     margin: auto;
     font-size: 15px;
+    -webkit-app-region: drag;
+}
+.top-bar .bullet
+{
+    width: 7.5px; height: 7.5px;
+    border-radius: 50%;
+    background-color: white;
     -webkit-app-region: drag;
 }

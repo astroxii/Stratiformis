@@ -1,12 +1,12 @@
-.actions-menu
+.actions-bar
 {
     position: relative; display: inline-flex;
     top: 0; left: 0;
     width: 100%; height: 30px;
-    justify-content: start; align-items: center;
+    align-items: center;
     background-color: rgb(51, 51, 51);
 }
-.actions-menu button
+.actions-bar button
 {
     height: 30px;
     padding: 0 20px;
@@ -15,11 +15,11 @@
     background-color: transparent;
     transition: 0.2s ease-in-out;
 }
-.actions-menu button:disabled
+.actions-bar button:disabled
 {
     color: gray;
 }
-.actions-menu button:not(:disabled):hover
+.actions-bar button:not(:disabled):hover
 {
     background-color: rgba(255, 255, 255, 0.15);
 }
@@ -41,7 +41,7 @@
 {
     min-width: 100%;
 }
-.dropdown-list li button:hover
+.dropdown-list li button:not(:disabled):hover
 {
     background-color: rgba(255, 255, 255, 0.15);
 }
@@ -49,4 +49,11 @@
 .dropdown:hover .dropdown-list
 {
     display: flex;
+}
+
+.list-sep
+{
+    width: 85%; height: 1px;
+    background-color: rgb(114, 114, 114);
+    margin: 2.5px 0;
 }

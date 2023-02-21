@@ -6,6 +6,14 @@ let mainWindow;
 
 app.setName("Stratiformis");
 app.whenReady()
-.then(() => {mainWindow = createWindow();})
+.then(() => 
+{
+    mainWindow = createWindow();
+
+    app.on('activate', () =>
+    {
+        if(BrowserWindow.getAllWindows().length === 0) createWindow();
+    });
+})
 .then(() => {registerListeners(mainWindow);});
 app.focus();

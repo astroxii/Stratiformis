@@ -1,16 +1,33 @@
 .start-section
 {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    margin: auto;
-    align-items: center; justify-content: center;
     gap: 15px;
     -webkit-user-select: none;
     user-select: none;
 }
 .start-section .greetings-title
 {
+    width: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
     margin-top: 4vh; margin-bottom: auto;
+    gap: 15px;
     font-family: "Montserrat"; font-size: 30px; font-weight: lighter;
     color: white;
 }
+.start-section .greetings-title::after
+{
+    content: '';
+    width: 50%; height: 1px;
+    min-width: 300px;
+    background-color: rgb(114, 114, 114);
+}
+
+.start-options-box
+{
+    width: 95%;
+    display: inline-flex;
+    align-items: center; justify-content: space-between;
+    margin-bottom: auto;
+}
+
+.start-options-box button{color: white; cursor: pointer;} /*temp*/
