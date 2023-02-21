@@ -38,7 +38,7 @@ function fileEvents()
             const file = 
             {
                 filename: path.basename(filePath[0]),
-                content: fs.readFileSync(filePath[0]).toString()
+                content: fs.readFileSync(filePath[0]).toString().replace(/\r/gi, "")
             }
 
             currentFile = filePath[0];
@@ -57,6 +57,11 @@ function fileEvents()
         const filename = path.basename(currentFile);
 
         return {filename, content};
+    });
+
+    ipcMain.on("file:close", () =>
+    {
+        currentFile = null;
     });
 }
 

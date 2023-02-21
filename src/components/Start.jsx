@@ -9,7 +9,7 @@ export default function Start({emitter, settings, setSettings, file, setFile})
         {
             if(f)
             {
-                setFile({...f, saved: true});
+                setFile({...f, editedContent: f.content, saved: true});
             }
         });
     }

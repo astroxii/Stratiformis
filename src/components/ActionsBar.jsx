@@ -4,7 +4,11 @@ export default function ActionsBar({emitter, settings, setSettings, file, setFil
 {
     const fileSave = () =>
     {
-        if(!file?.saved) setFile({...file, saved: true});
+        if(!file.saved)
+        {
+            emitter.invoke("file:save", {editedContent: file.editedContent}); // TODO
+            setFile({...file, saved: true});
+        }
     }
 
     const fileClose = () =>
@@ -15,7 +19,8 @@ export default function ActionsBar({emitter, settings, setSettings, file, setFil
         }
         else
         {
-            
+            emitter.send("file:close");
+            setFile(null);
         }
     }
 

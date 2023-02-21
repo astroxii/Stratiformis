@@ -28,7 +28,7 @@ export default function TopBar({emitter, file})
                 <img src={`./images/icon.png`} alt=""/>
                 <h1 className="title" tabIndex="-1">Stratiformis</h1>
             </div>
-            <p className="filename" tabIndex="-1" data-testid="filename-display">{file && !file?.saved? <span className="bullet"></span> : ""} {file?.filename || ""}</p>
+            <p className="filename" tabIndex="-1" data-testid="filename-display">{file && !file?.saved ? <span className="bullet"></span> : ""} {file?.filename || ""}</p>
             <div className="buttons">
                 <button id="min-btn" onClick={onMinimize} tabIndex="-1"><div className="line"></div></button>
                 <button id="max-btn" onClick={onMaximize} tabIndex="-1"><div className="square"></div></button>

@@ -2,13 +2,13 @@ import "../styles/Editor.css";
 
 export default function Editor({emitter, file, setFile})
 {
-    const checkChanges = (editor) =>
+    const checkChanges = (editedContent) =>
     {
-        if(editor.value !== file.content && file.saved)
+        if(editedContent !== file.content && file.saved)
         {
             setFile({...file, saved: false});
         }
-        else if(editor.value === file.content && !file.saved)
+        else if(editedContent === file.content && !file.saved)
         {
             setFile({...file, saved: true});
         }
@@ -16,9 +16,14 @@ export default function Editor({emitter, file, setFile})
 
     return(
         <section className="section editor-section" data-testid="editor-section">
-            <textarea onInput={(e) => checkChanges(e.target)} defaultValue={file.content} className="editor" data-testid="editor"></textarea>
+            <textarea onInput={(e) => {setFile({...file, editedContent: e.target.value}); checkChanges(e.target.value);}} defaultValue={file.content} className="editor" data-testid="editor"
+            autoFocus={true} autoCorrect="false" autoCapitalize="false" autoComplete="false" spellCheck={false}></textarea>
             <div className="editor-information">
-                a
+                <p>Palavras: {`${file.content.split("\n").join(" ").split(" ").length}`}</p>
+                <p>Linhas: {`${file.content.split("\n").length}`}</p>
+                {
+                    /* TODO */
+                }
             </div>
         </section>
     );
