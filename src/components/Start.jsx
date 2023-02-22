@@ -19,12 +19,17 @@ export default function Start({emitter, settings, setSettings, file, setFile})
             <h2 className="greetings-title">{getDayPeriodGreetings(settings?.language || "pt-br")}</h2>
             <div className="start-options-box">
                 <div>
-                    <h2>Arquivos recentes</h2>
-                    <ul>
-                        {
-                            // settings.recentFiles.map()
-                        }
-                    </ul>
+                    <h2 className="div-title">Arquivos recentes</h2>
+                    {
+                        settings && settings?.recentFiles ?
+                        <ul>
+                            {
+                                // settings.recentFiles.map()
+                            }
+                        </ul>
+                        :
+                        <p className="no-recent-files">Sem arquivos recentes...</p>
+                    }
                 </div>
                 <div>
                     <button onClick={fileOpen}>Abrir arquivo</button>

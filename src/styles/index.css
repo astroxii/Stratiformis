@@ -6,7 +6,7 @@
     margin: 0; padding: 0;
     box-sizing: border-box;
     -webkit-app-region: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", "Arial";
 }
 
 ::-webkit-scrollbar
