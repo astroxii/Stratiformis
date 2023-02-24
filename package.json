@@ -9,7 +9,7 @@
     "start": "electron .",
     "start:dev": "react-scripts start",
     "test": "react-scripts test",
-    "build:win": "react-scripts build && electron-builder --win",
+    "build:win": "react-scripts build && electron-builder --win && rmdir build",
     "build:linux": "react-scripts build && electron-builder --linux",
     "build:mac": "react-scripts build && electron-builder --mac"
   },

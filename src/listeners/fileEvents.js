@@ -1,11 +1,10 @@
-const {ipcMain, dialog} = require("electron");
+const { ipcMain, dialog } = require("electron");
 const path = require("path");
 const fs = require("fs");
 const { File } = require("../objects/File");
 
 function fileEvents()
 {
-    let currentFile = null;
     const dir = path.join(require('os').homedir(), "Documents", "Stratiformis");
     
     ipcMain.handle("file:create", () =>
@@ -25,9 +24,8 @@ function fileEvents()
 
         newFileName = `NewFile${files.filter((f) => {return f.includes("NewFile");}).length || ""}.txt`;
         fs.writeFileSync(path.join(dir, newFileName), "");
-        currentFile = path.join(dir, newFileName);
 
-        return {filename: newFileName, content: ""};
+        return new File(newFileName, "", path.join(dir, newFileName));
     });
 
     ipcMain.handle("file:open", () =>
@@ -53,7 +51,7 @@ function fileEvents()
 
     ipcMain.on("file:close", () =>
     {
-        currentFile = null;
+        
     });
 }
 
