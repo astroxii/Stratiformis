@@ -15,7 +15,10 @@ const createWindow = () =>
 
     if(app.isPackaged) win.loadFile(path.join(__dirname, "/../../../public/index.html"));
     else win.loadURL("http://localhost:3000");
+    
     win.setMenu(null);
+    win.show();
+
     //win.webContents.openDevTools();
 
     return win;

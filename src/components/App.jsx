@@ -7,7 +7,18 @@ const { ipcRenderer } = window;
 export default function App()
 {
     const [file, setFile] = useState(null);
-    const [settings, setSettings] = useState(null)// useState(ipcRenderer.invoke("app:settings:get").then((s) => JSON.parse(s)));
+    const [settings, setSettings] = useState(null);
+
+    useEffect(() => 
+    {
+        if(!settings)
+        {
+            ipcRenderer.invoke("app:settings").then((s) =>
+            {
+                setSettings(s);
+            });
+        }
+    }, [settings]);
 
     return(
         <Fragment>
