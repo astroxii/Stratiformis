@@ -14,6 +14,17 @@ export default function Start({emitter, settings, setFile})
         });
     }
 
+    const fileCreate = () =>
+    {
+        emitter.invoke("file:create").then((f) => 
+        {
+            if(f)
+            {
+                setFile(f);
+            }
+        });
+    }
+
     return(
         <section className="section start-section" data-testid="start-section">
             <h2 className="greetings-title">{getDayPeriodGreetings(settings?.language || "en")}</h2>
@@ -34,7 +45,7 @@ export default function Start({emitter, settings, setFile})
                 <div>
                     <button onClick={fileOpen}>Abrir arquivo</button>
                     <span>OU</span>
-                    <button>Criar novo</button>
+                    <button onClick={fileCreate}>Criar novo</button>
                 </div>
             </div>
         </section>

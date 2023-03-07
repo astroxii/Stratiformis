@@ -9,23 +9,8 @@ function fileEvents()
     
     ipcMain.handle("file:create", () =>
     {
-        let newFileName = "";
-        let files = [];
-
-        try
-        {
-            files = fs.readdirSync(dir);
-        }
-        catch
-        {
-            fs.mkdirSync(dir);
-            files = fs.readdirSync(dir);
-        }
-
-        newFileName = `NewFile${files.filter((f) => {return f.includes("NewFile");}).length || ""}.txt`;
-        fs.writeFileSync(path.join(dir, newFileName), "");
-
-        return new File(newFileName, "", path.join(dir, newFileName));
+        // TODO
+        return null;
     });
 
     ipcMain.handle("file:open", () =>
@@ -44,14 +29,21 @@ function fileEvents()
 
     ipcMain.handle("file:save", (e, file) =>
     {
-        fs.writeFileSync(file.path, file.editedContent);
+        try
+        {
+            fs.writeFileSync(file.path, file.editedContent);
+        }
+        catch
+        {
+            return null;
+        }
 
         return new File(path.basename(file.path), file.editedContent, file.path);
     });
 
     ipcMain.on("file:close", () =>
     {
-        
+
     });
 }
 
