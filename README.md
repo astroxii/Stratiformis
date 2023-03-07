@@ -12,12 +12,16 @@ Simple text/code editor for any purpose.
 
 ## To be added
 
+* Ask for saving before exit.
+* File create.
 * More file extensions.
 * GUI for creating files.
-* Modes: plain text for writing normal text files; code for writing code files with keyword colors.
+* Modes: Plain Text for writing normal text files; Code for writing code files with keyword colors.
 * Color Themes.
-* Translation. _(Currently only brazilian portuguese is available)_
-* GUI for adding symbols.
+* Translation.
+* GUI for adding symbols/emojis.
+
+> Only PT-BR language available for now.
 
 ## Want to test it?
 

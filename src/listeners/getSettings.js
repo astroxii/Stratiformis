@@ -4,7 +4,7 @@ const path = require("path");
 
 function getSettings()
 {
-    ipcMain.handle("app:settings", () =>
+    ipcMain.handle("app:settings:get", () =>
     {
         let settings;
     

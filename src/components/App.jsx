@@ -13,7 +13,7 @@ export default function App()
     {
         if(!settings)
         {
-            ipcRenderer.invoke("app:settings").then((s) =>
+            ipcRenderer.invoke("app:settings:get").then((s) =>
             {
                 setSettings(s);
             });
